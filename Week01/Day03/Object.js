@@ -70,23 +70,71 @@
 
 
 // Question 2 solve
-let Deposit = require("readline")
-let withdraw =require("Enter Your WithDraw Amount")
+// let Deposit = require("readline")
+// let withdraw =require("Enter Your WithDraw Amount")
 
+
+// const bank_account = {
+//     owner_name :"Hazik",
+//     Amount : 20000,
+//     withdraw_amount : withdraw,
+//     Deposit_amount : Deposit,
+// deposit_func(){
+//  this.Amount + this.Deposit_amount
+// },
+//     total_balance(){
+//         return this.Amount-this.withdraw_amount
+//     }
+
+// }
+
+// console.log(bank_account.owner_name)
+// console.log("Total balance is = "+bank_account.total_balance());
+
+
+
+
+// Thora GPT say kia hay jis may input lenay ka tarika sekha hay 
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 const bank_account = {
-    owner_name :"Hazik",
-    Amount : 20000,
-    withdraw_amount : withdraw,
-    Deposit_amount : Deposit,
-deposit_func(){
- this.Amount + this.Deposit_amount
-},
-    total_balance(){
-        return this.Amount-this.withdraw_amount
+    owner_name: "Hazik",
+    Amount: 20000,
+
+    deposit_func(deposit_amount) {
+        this.Amount += deposit_amount;
+    },
+
+    withdraw_func(withdraw_amount) {
+        if (withdraw_amount <= this.Amount) {
+            this.Amount -= withdraw_amount;
+            console.log("Withdrawal successful!");
+        } else {
+            console.log("Insufficient balance!");
+        }
+    },
+
+    total_balance() {
+        return this.Amount;
     }
+};
 
-}
+console.log("Account Owner: " + bank_account.owner_name);
 
-console.log(bank_account.owner_name)
-console.log("Total balance is = "+bank_account.total_balance());
+rl.question("Enter deposit amount: ", (deposit) => {
+    bank_account.deposit_func(Number(deposit));
+
+    rl.question("Enter withdrawal amount: ", (withdraw) => {
+        bank_account.withdraw_func(Number(withdraw));
+
+        console.log("Total balance is = " + bank_account.total_balance());
+
+        rl.close();
+    });
+});

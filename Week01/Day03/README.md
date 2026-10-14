@@ -1,84 +1,35 @@
-Date: 14 October 2026
+**Date:** 14 October 2026
 
-Today's objective:
-JavaScript Objects.
+**Today's Objective:**  
+To understand JavaScript Objects through real-world examples and learn how to take user input in Node.js.
 
-What I completed:
+**What I Completed:**
 
-1. Created a Student Marks Management System to calculate passed students, failed students, highest marks, lowest marks, average marks, and grades.
-2. Practiced `filter()`, `map()`, `reduce()`, `forEach()`, and `.length` with practical examples.
+1. Practiced JavaScript Objects and understood properties, keys, and values.
+2. Learned how to access, update, and add object properties.
+3. Worked on a real-world Bank Account problem involving the account owner's name, account balance, deposits, and withdrawals.
+4. Learned how to convert deposit and withdrawal amounts into numeric values using `Number()`.
+5. Practiced managing bank balances using the `deposit_func()`, `withdraw_func()`, and `total_balance()` methods.
 
-What I learned:
 
-* An array is used to store multiple values.
-* An object stores data in properties and values.
-* `.length` counts the total number of items in an array.
-* `filter()` selects values based on a condition and creates a new array.
-* `map()` creates a new value from each item in an array.
-* `reduce()` combines multiple values into a single final value.
-* `forEach()` performs an action on each item in an array.
-* `Math.max()` finds the highest number.
-* `Math.min()` finds the lowest number.
-* The spread operator `...` spreads array values into separate values.
-* `>=` means greater than or equal to.
-* `<` means less than.
-* `if`, `else if`, and `else` are used to apply conditions.
-* Average formula: Total Marks / Total Students.
-* `.filter(...).length` can be used to count values that satisfy a specific condition.
+**Technical Concepts Understood:**
 
-Exercises completed:
+- JavaScript Objects and Properties
+- Dot Notation
+- Object Methods and the `this` keyword
+- Node.js `readline` Module
+- User Input Using `rl.question()`
+- Type Conversion Using `Number()`
+- Functions and Return Values
+- Balance Calculation Using Addition and Subtraction
+- Error Debugging Using Stack Traces
+- Conditional Statements for Insufficient Balance Checking
 
-* Counted the total number of students.
-* Found passed students.
-* Found failed students.
-* Found the highest marks.
-* Found the lowest marks.
-* Calculated average marks.
-* Calculated grades for each student.
-* Counted passed students.
-* Counted failed students.
-* Created a new array of passing students.
+**GitHub Commit / Proof:**  
+Practiced coding the Bank Account project. The GitHub commit has not yet been confirmed.
 
-Project work:
-Student Marks Management Task:
+**Problem / Blocker:**  
+I initially had difficulty taking user input in Node.js and using that input with object methods. I learned the difference between `require()` and `rl.question()`. I also need more practice updating balances inside object methods and identifying `ReferenceError` issues.
 
-* Created an array of students.
-* Stored each student's name and marks.
-* Identified passed and failed students.
-* Calculated the highest and lowest marks.
-* Calculated the average marks.
-* Assigned A, B, C, D, and F grades according to marks.
-* Counted passed and failed students.
-* Practiced creating a new array containing passing students.
-
-Problems / blockers:
-
-* Initially, it was difficult to understand the difference between `filter()`, `map()`, `reduce()`, and `forEach()`.
-* Needed to understand the use of the spread operator with `Math.max(...array)` and `Math.min(...array)`.
-* Needed to understand how to convert average and pass/fail calculations into JavaScript code.
-
-How I solved them:
-
-* Broke down each array method using real student marks examples.
-* Checked each student's marks individually.
-* Solved the calculations manually first and then implemented them in JavaScript.
-* Used `filter()` for selecting and counting values, `map()` for extracting values, `reduce()` for calculating totals, and `forEach()` for performing actions on each student.
-
-GitHub commit:
-
-What I could explain without notes:
-
-* The basic arrays.
-* How `.length` works.
-* How `filter()` works.
-* How `map()` works.
-* How `reduce()` works.
-* How `forEach()` works.
-* The logic for identifying passed and failed students.
-* How to find the highest and lowest marks.
-* How to calculate the average.
-* How to calculate grades based on marks.
-* How to count passed and failed students.
-* How to create a new array containing passing students.
-
-Tomorrow's first task: Objects
+**Tomorrow's First Task:**  
+ scope and destructuring InshahAllah 
