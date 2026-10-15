@@ -57,3 +57,21 @@ function calculatePrice() {
 }
 
 calculatePrice();
+
+
+
+// Rest Operator
+const numbers = [10, 20, 30, 40];
+
+const [first, ...rest] = numbers;
+
+console.log(first);
+console.log(rest);  
+
+// spread operator
+
+const original = [10, 20, 30];
+
+const copy = [...original, ...original];
+
+console.log(copy); 
