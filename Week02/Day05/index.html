@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      h2 {
+        margin-top: 0;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        outline: none;
+      }
+      .password-wrapper {
+        position: relative;
+      }
+      .toggle-password {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .file-wrapper {
+        border: 2px dashed #bbb;
+        padding: 20px;
+        text-align: center;
+        border-radius: 6px;
+        background: #fafafa;
+        cursor: pointer;
+      }
+      #fileInput {
+        display: none;
+      }
+      .error-message {
+        color: #e74c3c;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+      .success-banner {
+        background: #2ecc71;
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        text-align: center;
+        margin-bottom: 20px;
+        display: none;
+      }
+      button {
+        width: 100%;
+        padding: 14px;
+        background: #4a90e2;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Create Account</h2>
+      <div id="successBanner" class="success-banner">
+        Account Created Successfully!
+      </div>
+
+      <form
+        id="masterForm"
+        action=""
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" />
+          <div id="nameError" class="error-message">Name is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" />
+          <div id="emailError" class="error-message">
+            Please enter a valid email
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" />
+            <span id="togglePassword" class="toggle-password">SHOW</span>
+          </div>
+          <div id="passwordError" class="error-message">
+            Password must be at least 6 characters
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Profile Picture</label>
+          <div
+            class="file-wrapper"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <span id="fileLabel">Click to upload image</span>
+            <input
+              type="file"
+              id="fileInput"
+              name="profilePic"
+              accept="image/*"
+            />
+          </div>
+          <div id="fileError" class="error-message">
+            Please upload a profile image
+          </div>
+        </div>
+
+        <button type="submit">Submit Data</button>
+      </form>
+    </div>
+
+    <script src="./form.js"></script>
+  </body>
+</html>

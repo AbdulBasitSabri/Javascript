@@ -1,0 +1,139 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Clicked</button>
+    <script src="/Week02/Day04/Event.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Array MCQ Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+
+        .options-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .options-btn:hover {
+            background: #f0f0f0;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <h3 id="question-text">Question yahan aayega...</h3>
+        <div id="options-container"></div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const quizData = [
+            ["JavaScript kia hay?", "Language", "Fruit", "Car", "Language"],
+            ["Events kab fire hotay hain?", "Page load par sirf", "User action par", "Kabhi nahi", "User action par"],
+            ["CSS kis kaam aati hay?", "Logic", "Database", "Design", "Design"]
+        ];
+
+        let currentQuestionIndex = 0;
+
+        const questionText = document.getElementById("question-text");
+        const optionsContainer = document.getElementById("options-container");
+        const result = document.getElementById("result");
+
+        function loadQuestion() {
+            result.textContent = "";
+            optionsContainer.innerHTML = "";
+
+            let question = quizData[currentQuestionIndex];
+
+            questionText.textContent = question[0];
+
+            for (let i = 1; i <= 3; i++) {
+                let button = document.createElement("button");
+
+                button.className = "options-btn";
+                button.textContent = question[i];
+
+                button.addEventListener("click", function () {
+                    checkAnswer(button.textContent, question[4]);
+                });
+
+                optionsContainer.appendChild(button);
+            }
+        }
+
+        function checkAnswer(selected, correct) {
+            if (selected === correct) {
+                result.textContent = "Sahi Jawab!";
+                result.className = "correct";
+            } else {
+                result.textContent = "Ghalat Jawab!";
+                result.className = "wrong";
+            }
+
+            setTimeout(function () {
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex < quizData.length) {
+                    loadQuestion();
+                } else {
+                    questionText.textContent = "Quiz Khatam Ho Gaya!";
+                    optionsContainer.innerHTML = "";
+                    result.textContent = "Aap ne saare sawaal complete kar liye.";
+                    result.className = "";
+                }
+            }, 2000);
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+</html>
